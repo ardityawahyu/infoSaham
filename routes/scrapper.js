@@ -6,6 +6,8 @@ var router = express.Router();
 var prevLast = '0';
 
 router.get('/saham', function(req, res) {
+
+    console.log(req.query.code);
     //if file exist
     fs.access(pathFileSaham, fs.constants.R_OK, (err) => {
         if (err) {
@@ -32,8 +34,8 @@ router.get('/saham', function(req, res) {
     });
 
     options = {
-        hostname: 'https://www.indopremier.com/ipotstock/newsSmartSearch.php?code=BBRI',
-        proxy: '172.18.104.8:1707'
+        url: 'https://www.indopremier.com/ipotstock/newsSmartSearch.php?code='+req.query.code,
+        // proxy: '172.18.104.8:1707'
     }
     console.log('requesting...');
     request(options, function(error, response, html){
