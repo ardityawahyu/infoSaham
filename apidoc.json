@@ -1,0 +1,8 @@
+{
+    "name": "WEB BRI API",
+    "version": "1.0.0",
+    "description": "WEB BRI API docs",
+    "template": {
+        "forceLanguage": "en"
+    }
+}
